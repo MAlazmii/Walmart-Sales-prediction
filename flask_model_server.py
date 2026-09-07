@@ -14,8 +14,8 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server address
 app.config['MAIL_PORT'] = 587  # Replace with your SMTP server port
 app.config['MAIL_USE_TLS'] = True  # Replace with True or False depending on your SMTP server
-app.config['MAIL_DEFAULT_SENDER'] = 'example@gmail.com'
-app.config['MAIL_USERNAME'] = 'exampe@gmail.com'  # Replace with your email username
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('SMTP_SENDER', os.environ.get('SMTP_USERNAME'))
+app.config['MAIL_USERNAME'] = os.environ.get('SMTP_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('SMTP_PASSWORD')  # Configure outside source control
 
 mail = Mail(app)
@@ -177,3 +177,4 @@ def get_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
