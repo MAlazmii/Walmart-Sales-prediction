@@ -1,3 +1,5 @@
+> **Project location:** [Walmart-Sales-prediction-project](https://github.com/MAlazmii/Walmart-Sales-prediction-project) contains the maintained version. This repository preserves the original project and its history.
+
 # Walmart Sales Prediction
 
 **A local web prototype connecting a sales-prediction model, inventory data, and an interactive browser interface.**
